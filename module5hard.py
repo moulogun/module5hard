@@ -70,23 +70,13 @@ class UrTube:
                     adult = True
             for i in range(len(self.videos)):
                 if video_name == self.videos[i].title:
-                    if self.videos[i].adult_mode == False and self.videos[i].adult_mode == False:
-                        for viewing in range(1, self.videos[i].duration + 1):
-                            print(viewing, end=' ')
-                            time.sleep(1)
-                        print('End of video')
-                    elif self.videos[i].adult_mode == True and adult == True:
-                        for viewing in range(1, self.videos[i].duration + 1):
-                            print(viewing, end=' ')
-                            time.sleep(1)
-                        print('End of video')
-                    elif self.videos[i].adult_mode == True and adult == False:
+                    if adult == False and self.videos[i].adult_mode == True:
                         print('You are under 18 years old, please leave the page')
-
-
-
-
-
+                    else:
+                        for viewing in range(1, self.videos[i].duration + 1):
+                            print(viewing, end=' ')
+                            time.sleep(1)
+                        print('End of video')
 
 
 ur = UrTube()
